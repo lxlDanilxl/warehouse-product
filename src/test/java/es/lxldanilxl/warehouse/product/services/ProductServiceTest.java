@@ -103,7 +103,6 @@ public class ProductServiceTest {
     public void testGetProduct() {
         // Arrange
         Product product = new Product();
-        product.setId(1L);
         product.setName("Test Product");
         product.setDescription("Test Description");
         product.setCategory("Test Category");
