@@ -42,7 +42,12 @@ public class ProductService {
     }
 
     public void updateProduct(Long id, ProductRequest productRequest) {
-        Product product = productRepository.findById(id).orElse(null);
+        Optional<Product> opt = productRepository.findById(id);
+
+        if (!opt.isPresent()) {
+            return;
+        }
+        Product product = opt.get();
         product.setName(productRequest.getName());
         product.setDescription(productRequest.getDescription());
         product.setCategory(productRequest.getCategory());
