@@ -5,7 +5,9 @@ import java.util.List;
 import es.lxldanilxl.warehouse.product.model.dtos.ProductRequest;
 import es.lxldanilxl.warehouse.product.model.dtos.ProductResponse;
 import es.lxldanilxl.warehouse.product.model.entities.Product;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 public class ProductMapper {
     public static ProductResponse toProductResponse(Product product) {
         return ProductResponse.builder()
@@ -17,6 +19,15 @@ public class ProductMapper {
                 .build();
     }
 
+    /**
+     * Converts a ProductResponse object to a Product entity.
+     *
+     * @param productResponse The ProductResponse object to convert.
+     * @return A Product entity with fields populated from the ProductResponse.
+     */
+
+    /************* ✨ Codeium Command ⭐ *************/
+    /****** 382325f4-d6f3-4f80-b47f-df3324ce9d7f *******/
     public static Product toProduct(ProductResponse productResponse) {
         return Product.builder()
                 .id(productResponse.getId())
